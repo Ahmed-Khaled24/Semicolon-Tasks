@@ -4,3 +4,27 @@
     justify-content: center;
     margin-bottom: 50px;
 }
+
+button{
+    padding: 10px 22px;
+    border-radius: 10px;
+    border-width: 0.5px;
+    border-color: #bfbfbf;
+    cursor: pointer;
+    font-size: 16px;
+    color: #343a40;
+    border-style: solid;
+}
+
+.main-text-input{
+    width: 350px;
+    border-radius: 10px;
+    border-width: 0.5px;
+    padding: 8px;
+    font-family: inherit;
+    font-size: 16px;
+    outline: none;
+    border-color: #bfbfbf;
+    border-style: solid;
+    color: #343a40;
+}

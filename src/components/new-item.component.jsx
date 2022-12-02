@@ -1,14 +1,19 @@
 import '../styles/new-item.styles.css'
-import TextInput from './text-input.component';
-import Button from './button.component'
+import { useState } from 'react';
 
-const NewItem = () => {
+const AddNewItem = ({addItem}) => {
+    const priorities = ['Low', 'Normal', 'High'];
+    const [priority, setPriority] = useState(0)
+    const onClick = () => {
+        priority < 2 ? setPriority(priority+1) : setPriority(0);
+    }
+
     return (
         <div className='new-item-section'>
-            <TextInput placeholder='Add New Item'/>
-            <Button text='Priority:High'/>
-            <Button text='Add'/>
+            <input type='text' className='main-text-input' placeholder='Add New Item' id='new-title'/>
+            <button type="button" onClick={onClick}> Priority: <span id='new-priority'> {priorities[priority]} </span> </button>
+            <button type='button' onClick={addItem}> Add </button>
         </div>
     )
 }
-export default NewItem;
+export default AddNewItem;

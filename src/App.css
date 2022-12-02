@@ -1,3 +1,15 @@
 .App{
     min-height: 100vh;
 }
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    background-color: #eeeeee;
+}
+
+.footer-text{
+    font-size: 12px;
+}
