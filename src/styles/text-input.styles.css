@@ -1,0 +1,8 @@
+.main-text-input{
+    width: 350px;
+    border-radius: 10px;
+    border-width: 0.5px;
+    padding: 8px;
+    font-family: inherit;
+    font-size: 16px;
+}
