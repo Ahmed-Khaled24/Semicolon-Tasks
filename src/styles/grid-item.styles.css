@@ -1,0 +1,22 @@
+.grid-item{
+    padding: 16px;
+    border: 1px solid #bfbfbf;
+    border-radius: 10px;
+}
+
+.item-title{
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.item-content{
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.item-priority{
+    font-size: 10px;
+    font-weight: 700;
+    color: darkred;
+    text-transform: uppercase;
+}
