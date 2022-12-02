@@ -1,0 +1,26 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 32px;
+    margin-bottom: 50px;
+    background-color: #eeeeee;
+    align-items: center;
+}
+
+.logo{
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -1.5px;
+    cursor: pointer;
+}
+
+.links{
+    display: flex;
+    gap:32px;
+}
+
+.links a {
+    text-decoration: none;
+    color: inherit;
+}
