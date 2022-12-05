@@ -1,4 +1,4 @@
-import '../styles/nav.styles.css'
+import './nav.styles.css'
 const Nav = ({links, brandName}) => {
     return(
         <nav>
@@ -6,7 +6,7 @@ const Nav = ({links, brandName}) => {
                 {brandName}
             </div>
             <div className='links' > 
-                { links.map((link) => <a href='#'>{link}</a>) }
+                { links.map( (link, index) => <a href='#' key={index}> {link} </a>) }
             </div>
         </nav>
     )

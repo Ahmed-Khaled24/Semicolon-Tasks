@@ -1,5 +1,6 @@
 .App{
     min-height: 100vh;
+    position: relative;
 }
 
 footer{
@@ -8,6 +9,9 @@ footer{
     justify-content: center;
     min-height: 50px;
     background-color: #eeeeee;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 .footer-text{

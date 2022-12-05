@@ -1,4 +1,4 @@
-import "../styles/grid-item.styles.css";
+import "./grid-item.styles.css";
 
 const GridItem = ({ item }) => {
 	return (
