@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Semicolon-Tasks/static/css/main.c18f816c.css",
-    "main.js": "/Semicolon-Tasks/static/js/main.0ba0c4a3.js",
+    "main.css": "/Semicolon-Tasks/static/css/main.80a56593.css",
+    "main.js": "/Semicolon-Tasks/static/js/main.420c8949.js",
     "static/js/787.a5a00b74.chunk.js": "/Semicolon-Tasks/static/js/787.a5a00b74.chunk.js",
     "index.html": "/Semicolon-Tasks/index.html",
-    "main.c18f816c.css.map": "/Semicolon-Tasks/static/css/main.c18f816c.css.map",
-    "main.0ba0c4a3.js.map": "/Semicolon-Tasks/static/js/main.0ba0c4a3.js.map",
+    "main.80a56593.css.map": "/Semicolon-Tasks/static/css/main.80a56593.css.map",
+    "main.420c8949.js.map": "/Semicolon-Tasks/static/js/main.420c8949.js.map",
     "787.a5a00b74.chunk.js.map": "/Semicolon-Tasks/static/js/787.a5a00b74.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c18f816c.css",
-    "static/js/main.0ba0c4a3.js"
+    "static/css/main.80a56593.css",
+    "static/js/main.420c8949.js"
   ]
 }
