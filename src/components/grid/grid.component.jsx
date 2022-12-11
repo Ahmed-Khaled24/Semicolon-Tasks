@@ -1,11 +1,11 @@
 import './grid.styles.css'
 import GridItem from '../grid-item/grid-item.component';
-const Grid = ({items}) => {
+const Grid = ({items , deleteItem}) => {
     return (
         <div className='grid'>
             {items.map((item, index) => {
                 return (
-                    <GridItem item={item} key={index}/>
+                    <GridItem item={item} deleteItem={deleteItem} key={index} />
                 )
             })}
         </div>
