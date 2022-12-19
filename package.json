@@ -18,7 +18,9 @@
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "full-stack": "npm json-server database.json --port 3001 --delay 5000 && npm start",
+    "json-server": "json-server --watch database.json --port 3001 --delay 5000"
   },
   "eslintConfig": {
     "extends": [
@@ -39,6 +41,7 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^4.0.0"
+    "gh-pages": "^4.0.0",
+    "json-server": "^0.17.1"
   }
 }

@@ -1,0 +1,64 @@
+{
+  "todos": [
+    {
+      "title": "Study",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem",
+      "priority": "High",
+      "id": 384714
+    },
+    {
+      "title": "Sleep",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem",
+      "priority": "High",
+      "id": 721359
+    },
+    {
+      "title": "Eat",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem",
+      "priority": "High",
+      "id": 962654
+    },
+    {
+      "title": "Study",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem",
+      "priority": "Medium",
+      "id": 212804
+    },
+    {
+      "title": "Sleep",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem",
+      "priority": "Medium",
+      "id": 421407
+    },
+    {
+      "title": "Eat",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem",
+      "priority": "Medium",
+      "id": 505817
+    },
+    {
+      "title": "Study",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem",
+      "priority": "Low",
+      "id": 887689
+    },
+    {
+      "title": "Sleep",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem",
+      "priority": "Low",
+      "id": 193342
+    },
+    {
+      "title": "Eat",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem",
+      "priority": "Low",
+      "id": 542448
+    },
+    {
+      "title": "new item",
+      "priority": "Low",
+      "id": 368397,
+      "content": "Lorem Ipsum is simply dummy text of the"
+    }
+  ]
+}

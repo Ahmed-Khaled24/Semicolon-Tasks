@@ -2,111 +2,82 @@ import "./App.css";
 import Nav from "./components/nav/nav.component";
 import AddNewItem from "./components/new-item/new-item.component";
 import Grid from "./components/grid/grid.component";
-import { useEffect, useState } from "react";
+import LoadingScreen from "./components/loading-screen/loading-screen.component";
+import { useEffect, useState, Fragment } from "react";
 
-let items = [
-	{
-		title: "Study",
-		content:
-			"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem",
-		priority: "High",
-		id: Math.floor(Math.random()*1e6),
-	},
-	{
-		title: "Sleep",
-		content:
-			"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem",
-		priority: "High",
-		id: Math.floor(Math.random()*1e6),
-	},
-	{
-		title: "Eat",
-		content:
-			"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem",
-		priority: "High",
-		id: Math.floor(Math.random()*1e6),
-	},
-	{
-		title: "Study",
-		content:
-			"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem",
-		priority: "Medium",
-		id: Math.floor(Math.random()*1e6),
-	},
-	{
-		title: "Sleep",
-		content:
-			"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem",
-		priority: "Medium",
-		id: Math.floor(Math.random()*1e6),
-	},
-	{
-		title: "Eat",
-		content:
-			"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem",
-		priority: "Medium",
-		id: Math.floor(Math.random()*1e6),
-	},
-	{
-		title: "Study",
-		content:
-			"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem",
-		priority: "Low",
-		id: Math.floor(Math.random()*1e6),
-	},
-	{
-		title: "Sleep",
-		content:
-			"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem",
-		priority: "Low",
-		id: Math.floor(Math.random()*1e6),
-	},
-	{
-		title: "Eat",
-		content:
-			"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem",
-		priority: "Low",
-		id: Math.floor(Math.random()*1e6),
-	}
-];
+const priorities = ["Low", "Medium", "High"];
+let items;
 
 const App = () => {
-	const [todos, setTodos] = useState(items);
+	const [todos, setTodos] = useState([]);
+	const [refetch, setRefetch] = useState(0);
+	const [priority, setPriority] = useState(0);
+	const [title, setTitle] = useState("");
 
 	useEffect(() => {
-		filterHandler('Low');
-	}, []);
+		fetch("http://localhost:3001/todos")
+			.then((data) => data.json())
+			.then((data) => {
+				items = data;
+				filterHandler(priorities[priority]);
+			});
+	}, [refetch]);
 
-	const addItemHandler = () => {
-		const title = document.getElementById("new-title").value;
-		const currentPriority = document.getElementById("new-priority").innerHTML;
-		items.push({
+	function addItemHandler() {
+		const newTodo = {
 			title,
-			priority: currentPriority,
-			id: Math.floor(Math.random()*1e6),
-			content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem",
-		});
-		filterHandler(currentPriority)
-	};
+			priority: priorities[priority],
+			id: Math.floor(Math.random() * 1e6),
+			content: "Lorem Ipsum is simply dummy text of the",
+		};
 
-	const filterHandler = (priority) => {
-		setTodos(items.filter(item => item.priority === priority));
+		fetch("http://localhost:3001/todos", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(newTodo),
+		}).then(() => {
+			setRefetch(Math.random());
+			filterHandler(priorities[priority]);
+		});
 	}
 
-	const deleteItemHandler = (event) => {
-		const targetItemId = Number(event.target.id);
-		items = items.filter(item => item.id === targetItemId ? false : true);
-		const currentPriority = document.getElementById("new-priority").innerHTML;
-		filterHandler(currentPriority);
+	function filterHandler(curPriority /* String */) {
+		setTodos(items.filter((item) => item.priority === curPriority));
+	}
+
+	function deleteItemHandler(event) {
+		const targetId = event.target.id;
+		fetch(`http://localhost:3001/todos/${targetId}`, {
+			method: "DELETE",
+		}).then(() => {
+			setRefetch(Math.random());
+		});
 	}
 
 	return (
 		<div className="App">
-			<Nav links={["Home", "Contact", "Login"]} brandName="todo" />
-			<AddNewItem addItem={addItemHandler} filter={filterHandler}/>
-			<Grid items={todos} deleteItem={deleteItemHandler}/>
+			<Nav
+				links={["HOME", "CONTACT", "LOGIN", "ABOUT"]}
+				brandName="todo"
+			/>
+			{items ? (
+				<Fragment>
+					<AddNewItem
+						addItemHandler={addItemHandler}
+						filterHandler={filterHandler}
+						priority={priority}
+						setPriority={setPriority}
+						setTitle={setTitle}
+					/>
+					<Grid items={todos} deleteItemHandler={deleteItemHandler} />
+				</Fragment>
+			) : (
+				<LoadingScreen />
+			)}
 			<footer>
-				<p className="footer-text"> © AHMED KHALED </p>
+				<p className="footer-text"> © AHMED KHALID </p>
 			</footer>
 		</div>
 	);
